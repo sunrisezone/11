@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>巴哈姆特自動化！ Action 設定檔產生器</title>
+    </head>
+    <body>
+        <div id="background">
+            <img src="https://raw.githubusercontent.com/JacobLinCool/Bahamut-Automation/main/Bahamut%20Automation%20Preview.png" />
+        </div>
+        <div id="container">
+            <div class="wrap">
+                <h1 id="title"><a href="https://github.com/JacobLinCool/Bahamut-Automation" target="_blank">巴哈姆特自動化</a> Action 設定檔產生器</h1>
+            </div>
+            <div class="wrap">
+                <label for="username" class="label">巴哈姆特用戶名稱</label><br />
+                <input id="username" placeholder="巴哈姆特用戶名稱" />
+            </div>
+            <div class="wrap">
+                <label for="password" class="label">巴哈姆特用戶密碼</label><br />
+                <input id="password" placeholder="巴哈姆特用戶密碼" />
+            </div>
+            <div class="wrap">
+                <label for="twofa" class="label">巴哈姆特兩步驟驗證種子碼</label><br />
+                <input id="twofa" placeholder="巴哈姆特兩步驟驗證種子碼" />
+            </div>
+            <div class="wrap">
+                <label for="gh_pat" class="label"
+                    >GitHub Personal Access Token<br />
+                    (Issue 模組) <a href="https://github.com/settings/tokens" target="_blank">產生</a></label
+                ><br />
+                <input id="gh_pat" placeholder="GitHub Personal Access Token" />
+            </div>
+            <div class="wrap">
+                <label for="tg_id" class="label"
+                    >Telegram 訊息通道 ID<br />
+                    (Telegram 模組, v0.6.3+) <a href="https://t.me/automia_bot" target="_blank">機器人</a></label
+                ><br />
+                <input id="tg_id" placeholder="Telegram 訊息通道 ID" />
+            </div>
+            <div class="wrap">
+                <label for="dc_url" class="label"
+                    >Discord Webhook URL<br />
+                    (Discord 模組, v0.6.11+)</label
+                ><br />
+                <input id="dc_url" placeholder="Discord Webhook URL" />
+            </div>
+            <div class="wrap">
+                <label for="line_notify_token" class="label"
+                    >Line Notify 權杖代碼<br />
+                    (Line Notify 模組, 1.0.0+) <a href="https://notify-bot.line.me/zh_TW/" target="_blank">Line Notify</a></label
+                ><br />
+                <input id="line_notify_token" placeholder="Line Notify 權杖代碼" />
+            </div>
+            <div class="wrap">
+                <label for="config" class="label">Secret 設定檔</label><button id="copy" data-clipboard-target="#config">複製</button>
+                <br />
+                <textarea id="config" placeholder="Secret 設定檔"></textarea>
+            </div>
+        </div>
+        <style>
+            * {
+                position: relative;
+                font-family: sans-serif;
+            }
+            html,
+            body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+            }
+            a {
+                color: #00b1e4;
+                text-decoration: none;
+            }
+            #background {
+                z-index: -1;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                filter: blur(25px) opacity(0.7);
+            }
+            #background > img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+            }
+            #container {
+                width: 100%;
+                max-width: 700px;
+
+                background-color: rgba(245, 245, 230, 0.8);
+            }
+            .wrap {
+                margin: 12px;
+                padding: 12px 0;
+                font-size: 1.2rem;
+            }
+            #title {
+                font-size: 2rem;
+                padding: 0;
+                margin: 4px 0;
+            }
+            input,
+            #config {
+                width: calc(100% - 12px);
+                padding: 6px;
+                border: 1px solid #ccc;
+                border-radius: 3px;
+
+                transition: all 0.2s;
+            }
+            input:focus,
+            #config:focus {
+                outline: none;
+                padding: 5px;
+                border: 2px solid #00b1e4;
+            }
+            #config {
+                height: 160px;
+                resize: none;
+                font-size: 1rem;
+            }
+            #copy {
+                background-color: transparent;
+                border: none;
+                color: #00b1e4;
+                padding: 0px 10px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 1.2rem;
+                cursor: pointer;
+            }
+        </style>
+        <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js"></script>
+        <script>
+            update();
+            new ClipboardJS("#copy");
+            [...document.querySelectorAll("input")].forEach((el) => {
+                el.addEventListener("input", update);
+            });
+
+            function update() {
+                let ta = document.querySelector("#config");
+                const config = {
+                    username: document.querySelector("#username").value,
+                    password: document.querySelector("#password").value,
+                    twofa: document.querySelector("#twofa").value,
+                    gh_pat: document.querySelector("#gh_pat").value,
+                    tg_id: document.querySelector("#tg_id").value,
+                    dc_url: document.querySelector("#dc_url").value,
+                    line_notify_token: document.querySelector("#line_notify_token").value,
+                };
+                ta.value = JSON.stringify(config, null, 4);
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,16 @@
+# Number of days of inactivity before an issue becomes stale
+daysUntilStale: 30
+# Number of days of inactivity before a stale issue is closed
+daysUntilClose: 7
+# Issues with these labels will never be considered stale
+exemptLabels:
+  - 置頂
+  - 安全問題
+# Label to use when marking an issue as stale
+staleLabel: 非活躍
+# Comment to post when marking an issue as stale. Set to `false` to disable
+markComment: >
+  此問題已標註為「非活躍」，她將會被關閉如果沒有人拯救她，啊不是，是沒人提出更多討論，感謝所有參與此問題討論的人。
+# Comment to post when closing a stale issue. Set to `false` to disable
+closeComment: >
+  此問題已因持續的「非活躍」狀態而關閉。

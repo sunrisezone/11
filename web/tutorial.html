@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>巴哈姆特自動化！ 使用教學</title>
+    </head>
+    <body>
+        <div id="background">
+            <img src="https://raw.githubusercontent.com/JacobLinCool/Bahamut-Automation/main/Bahamut%20Automation%20Preview.png" />
+        </div>
+        <div id="container">
+            <div class="wrap">
+                <h1 id="title"><a href="https://github.com/JacobLinCool/Bahamut-Automation" target="_blank">巴哈姆特自動化</a> 使用教學</h1>
+            </div>
+            <div class="wrap">
+                <h2>第一步：建立 GitHub 帳號</h2>
+                <p>如果你還沒有 GitHub 帳號，請先<a href="https://github.com/signup" target="_blank">建立一個帳號</a>。</p>
+            </div>
+            <div class="wrap">
+                <h2>第二步：前往核心程式的專案</h2>
+                <p>
+                    前往 <a href="https://github.com/JacobLinCool/Bahamut-Automation" target="_blank">Bahamut Automation 專案</a>。<br />
+                    如果你願意，請點擊右上角「 <b>Star</b> 」按鈕，給專案一顆閃亮的 Star。<br />
+                    然後，請點擊右上角「 <b>Watch</b> 」按鈕，可以收到專案更新的訊息。<br />
+                    接著務必把下方的 README.md 文件內容仔細看過。
+                </p>
+            </div>
+            <div class="wrap">
+                <h2>第三步：Fork Template 專案</h2>
+                <p>
+                    前往 <a href="https://github.com/JacobLinCool/Bahamut-Automation-Template" target="_blank">Template 專案</a>。<br />
+                    請點擊右上角「 <b>Fork</b> 」按鈕，複製一份 Template 專案。<br /><br />
+                    接著點擊「 <b>Settings</b> 」按鈕，在下方「 <b>Features</b> 」區塊中找到 「 <b>Issues</b> 」，並把它打勾。<br /><br />
+                    再來，點擊左方選單的「 <b>Secrets</b> 」，點擊「 <b>New repository secret</b> 」按鈕，在「 <b>Name</b> 」欄位輸入「
+                    <b>secrets</b> 」，其值稍後輸入，不要關閉此頁。<br />
+                </p>
+            </div>
+            <div class="wrap">
+                <h2>第四步：建立設定檔</h2>
+                <div>
+                    前往 <a href="./config.html" target="_blank">設定檔產生器</a>，輸入你的巴哈帳號及密碼。<br />
+                    如果有開啟兩步驟驗證，記得輸入兩步驟驗證種子碼（不是那六位數字，應該是一串大寫英文）。<br /><br />
+                    <div class="optional">
+                        <span>如果要啟用 <b>GitHub Issue Report</b> 請依照以下步驟：</span><br />
+                        <ol>
+                            <li>
+                                點擊「 <b><a href="https://github.com/settings/tokens" target="_blank">產生</a></b> 」按鈕
+                            </li>
+                            <li>點擊該頁右上角「 <b>Generate new token</b> 」按鈕</li>
+                            <li>在「 <b>Note</b> 」欄位中輸入任何字（提醒你這個 Token 是幹嘛用的）</li>
+                            <li>調整「 <b>Expiration</b> 」至「 <b>No expiration</b> 」</li>
+                            <li>勾選下方「 <b>workflow</b> 」</li>
+                            <li>至最底部點擊「 <b>Generate token</b> 」</li>
+                            <li>複製像「 <b>ghp_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</b> 」的 Token 到對應的產生器欄位</li>
+                        </ol>
+                    </div>
+                    <br />
+                    <div class="optional">
+                        如果要啟用 <b>Telegram Report</b> 請依照以下步驟：<br />
+                        <ol>
+                            <li>
+                                點擊「 <b><a href="https://t.me/automia_bot" target="_blank">機器人</a></b> 」按鈕
+                            </li>
+                            <li>開啟 Telegram 應用程式並與機器人「 <b>Automia</b> 」開始對話</li>
+                            <li>傳送「 <b>ID</b> 」給機器人「 <b>Automia</b> 」</li>
+                            <li>複製像「 <b>1010101010</b> 」的通道 ID 到對應的產生器欄位</li>
+                        </ol>
+                    </div>
+                    <br />
+                    <div class="optional">
+                        如果要啟用 <b>Discord Report</b> 請依照以下步驟：<br />
+                        <ol>
+                            <li>建立一個自己的 <b>Discord 伺服器</b>，在你想要發送的文字頻道按 <b>齒輪</b> 設定</li>
+                            <li>點擊 <b>整合</b> -> <b>Webhook</b> -> <b>新 Webhook</b></li>
+                            <li>點擊 <b>複製 Webhook 網址</b> 並貼到到對應的產生器欄位</li>
+                        </ol>
+                    </div>
+                    <br />
+                    <div class="optional">
+                        如果要啟用 <b>Line Notify Report</b> 請依照以下步驟：<br />
+                        <ol>
+                            <li>進入 <a href="https://notify-bot.line.me/zh_TW/">Line Notify</a></li>
+                            <li>點擊右上方登入 Line 帳號</li>
+                            <li>點擊右上方 <b>自己的 ID</b> -> <b>個人頁面</b> -> <b>發行權杖</b></li>
+                            <li>
+                                填入名稱(會顯示在訊息上)，並選擇要接收訊息的聊天室或群組，建議選擇
+                                <b>透過1對1聊天接收LINE Notify的通知</b>，若選擇群組的話，需將 Line Notify 官方帳號加入群組後才收的到訊息
+                            </li>
+                            <li>按下發行</li>
+                            <li>點擊 <b>複製</b>，並將權杖代碼貼到對應的產生器欄位</li>
+                        </ol>
+                    </div>
+                    <br />
+                    按下「 <b>複製</b> 」按鈕複製設定檔，並貼回剛剛第三步的「 <b>Value</b> 」欄位，按下「 <b>Add secret</b> 」按鈕新增 Secret。
+                </div>
+            </div>
+            <div class="wrap">
+                <h2>第五步：啟用 GitHub Action</h2>
+                <div>
+                    前往你的專案的「 <b>Actions</b> 」分頁。<br />
+                    如果你看到像「啟用 (Enable) 」的綠色按鈕，把它按下去。<br />
+                    選擇左方選單的「 <b>自動化</b> 」，然後點擊右側「 <b>Run workflow</b> 」按鈕。 不久後，應該就會執行第一次自動化，可以點進去看看發生什麼事。
+                </div>
+            </div>
+            <div class="wrap">
+                <h2>第六步：遇到問題</h2>
+                <div>
+                    前往
+                    <a href="https://github.com/JacobLinCool/Bahamut-Automation/discussions" target="_blank">Bahamut Automation 專案的 Discussions 頁面</a
+                    >。<br />
+                    找找有沒有人跟你遇到一樣的問題，如果沒有，請在這裡建立一個 Discussion (請用 Q&A 類別)，並盡可能詳細的描述你的問題。<br />
+                </div>
+            </div>
+            <div class="wrap"></div>
+            <div class="wrap"></div>
+            <div class="wrap"></div>
+        </div>
+        <style>
+            * {
+                position: relative;
+                font-family: sans-serif;
+            }
+            html,
+            body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+            }
+            a {
+                color: #00b1e4;
+                text-decoration: none;
+            }
+            #background {
+                z-index: -1;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                filter: blur(25px) opacity(0.7);
+            }
+            #background > img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+            }
+            #container {
+                width: 100%;
+                max-width: 700px;
+
+                background-color: rgba(245, 245, 230, 0.8);
+            }
+            .wrap {
+                margin: 12px;
+                padding: 12px 0;
+                font-size: 1.2rem;
+            }
+            #title {
+                font-size: 2rem;
+                padding: 0;
+                margin: 4px 0;
+            }
+            .optional {
+                color: rgb(90, 90, 90);
+                background: rgba(90, 90, 90, 0.1);
+                padding: 6px;
+                border-radius: 6px;
+                overflow-wrap: break-word;
+            }
+        </style>
+        <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js"></script>
+        <script></script>
+    </body>
+</html>

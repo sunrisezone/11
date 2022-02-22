@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "esnext",
+        "esModuleInterop": true,
+        "noImplicitAny": true,
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "outDir": "../dist/lib/core/",
+        "sourceMap": false,
+        "moduleResolution": "node"
+    },
+    "include": ["../src/core/**/*"]
+}

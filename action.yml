@@ -1,0 +1,26 @@
+name: "Bahamut Automation"
+description: "巴哈姆特自動化！"
+author: "JacobLinCool"
+branding:
+  icon: "check-square"
+  color: "blue"
+runs:
+  using: "node12"
+  main: "action.js"
+inputs:
+  modules:
+    description: "使用的模組"
+    required: false
+    default: "report,ad_handler,login,sign,guild,answer,lottery,sayloud,builder,logout,report,telegram,discord,line_notify,issue"
+  parameters:
+    description: "一般程式參數"
+    required: false
+    default: "{}"
+  secrets:
+    description: "機密程式參數 (建議使用 Secret)"
+    required: false
+    default: "{}"
+  browser:
+    description: "瀏覽器設定"
+    required: false
+    default: "{}"

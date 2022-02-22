@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>巴哈姆特自動化！</title>
+    </head>
+    <body>
+        <div id="background">
+            <img src="https://raw.githubusercontent.com/JacobLinCool/Bahamut-Automation/main/Bahamut%20Automation%20Preview.png" />
+        </div>
+        <div id="container">
+            <div class="wrap">
+                <h1 id="title"><a href="https://github.com/JacobLinCool/Bahamut-Automation" target="_blank">巴哈姆特自動化</a></h1>
+            </div>
+            <div class="wrap"></div>
+            <div class="wrap">
+                <span>執行次數</span><br />
+                <div>大於 <span id="run" class="counter">...</span> 次</div>
+            </div>
+            <div class="wrap">
+                <span>協助簽到次數</span><br />
+                <div>大於 <span id="sign" class="counter">...</span> 次</div>
+            </div>
+            <div class="wrap">
+                <span>獲得的動畫瘋答題獎勵</span><br />
+                <div>大於 <span id="answer" class="counter">...</span> 巴幣</div>
+            </div>
+            <div class="wrap">
+                <span>獲得的抽抽樂次數</span><br />
+                <div>大於 <span id="lottery" class="counter">...</span> 次</div>
+            </div>
+            <div class="wrap">
+                <span>獲得的抽抽樂的等價巴幣</span><br />
+                <div>大於 <span id="lottery-coin" class="counter">...</span> 巴幣</div>
+            </div>
+            <div class="wrap">
+                匿名數據從 v0.6.7 開始計算，使用 <a href="https://countapi.xyz/" target="_blank">countapi.xyz</a> 計數器。<br />
+                計數程式碼使用 countapi.xyz 的 <a href="https://www.npmjs.com/package/countapi-js" target="_blank">"countapi-js" NPM Package</a>。
+            </div>
+        </div>
+        <style>
+            * {
+                position: relative;
+                font-family: sans-serif;
+            }
+            html,
+            body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+            }
+            a {
+                color: #00b1e4;
+                text-decoration: none;
+            }
+            #background {
+                z-index: -1;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                filter: blur(25px) opacity(0.7);
+            }
+            #background > img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+            }
+            #container {
+                width: 100%;
+                max-width: 700px;
+
+                background-color: rgba(245, 245, 230, 0.8);
+            }
+            .wrap {
+                margin: 12px;
+                padding: 12px 0;
+                font-size: 1.2rem;
+            }
+            #title {
+                font-size: 2rem;
+                padding: 0;
+                margin: 4px 0;
+            }
+            .counter {
+                font-size: 2.4rem;
+                font-weight: bold;
+            }
+        </style>
+        <script>
+            Number.prototype.comma = function () {
+                return this.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            };
+            fetch("https://api.countapi.xyz/get/Bahamut-Automation/run")
+                .then((r) => r.json())
+                .then(({ value }) => {
+                    document.querySelector("#run").innerHTML = value.comma();
+                });
+            fetch("https://api.countapi.xyz/get/Bahamut-Automation/sign")
+                .then((r) => r.json())
+                .then(({ value }) => {
+                    document.querySelector("#sign").innerHTML = value.comma();
+                });
+            fetch("https://api.countapi.xyz/get/Bahamut-Automation/answer")
+                .then((r) => r.json())
+                .then(({ value }) => {
+                    document.querySelector("#answer").innerHTML = value.comma();
+                });
+            fetch("https://api.countapi.xyz/get/Bahamut-Automation/lottery")
+                .then((r) => r.json())
+                .then(({ value }) => {
+                    document.querySelector("#lottery").innerHTML = value.comma();
+                    document.querySelector("#lottery-coin").innerHTML = (value * 500).comma();
+                });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>巴哈姆特自動化！</title>
+    </head>
+    <body>
+        <div id="background">
+            <img src="https://raw.githubusercontent.com/JacobLinCool/Bahamut-Automation/main/Bahamut%20Automation%20Preview.png" />
+        </div>
+        <div id="container">
+            <div class="wrap">
+                <h1 id="title"><a href="https://github.com/JacobLinCool/Bahamut-Automation" target="_blank">巴哈姆特自動化</a></h1>
+            </div>
+            <div class="wrap"></div>
+            <div class="wrap">
+                <ul>
+                    <li>
+                        <h2><a href="./tutorial.html">使用教學</a></h2>
+                    </li>
+                    <li>
+                        <h2><a href="./config.html">設定檔產生器</a></h2>
+                    </li>
+                    <li>
+                        <h2><a href="./states.html">匿名使用數據</a></h2>
+                    </li>
+                    <li>
+                        <h2><a href="./docs/">API Docs</a></h2>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <style>
+            * {
+                position: relative;
+                font-family: sans-serif;
+            }
+            html,
+            body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+            }
+            a {
+                color: #00b1e4;
+                text-decoration: none;
+            }
+            #background {
+                z-index: -1;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                filter: blur(25px) opacity(0.7);
+            }
+            #background > img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+            }
+            #container {
+                width: 100%;
+                max-width: 700px;
+                height: 100%;
+
+                background-color: rgba(245, 245, 230, 0.8);
+            }
+            .wrap {
+                margin: 12px;
+                padding: 12px 0;
+                font-size: 1.2rem;
+            }
+            #title {
+                font-size: 2rem;
+                padding: 0;
+                margin: 4px 0;
+            }
+        </style>
+        <script></script>
+    </body>
+</html>
